@@ -12,9 +12,9 @@ RUN apt-get update && \
         libssl-dev \
         make
 # v3.14.5+
-RUN curl -L https://github.com/Kitware/CMake/releases/download/v3.23.2/cmake-3.23.2.tar.gz | tar -xz
-RUN cd cmake-3.23.2 && ./bootstrap --parallel="$(nproc)"
-RUN cd cmake-3.23.2 && make -j"$(nproc)" install DESTDIR=/cmake
+RUN curl -L https://github.com/Kitware/CMake/releases/download/v3.28.1/cmake-3.28.1.tar.gz | tar -xz
+RUN cd cmake-3.28.1 && ./bootstrap --parallel="$(nproc)"
+RUN cd cmake-3.28.1 && make -j"$(nproc)" install DESTDIR=/cmake
 
 FROM ubuntu:18.04 as gh
 ENV DEBIAN_FRONTEND=noninteractive
